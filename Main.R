@@ -12,11 +12,11 @@ calc_OR_CI(formula, df)
 #OR_basic： OR for the CM variable of the basic model
 #OR_reduced： OR for the CM variable of the model with additional covariates
 
-PERM <- function(OR) {
+PERM <- function(OR_basic, OR_reduced) {
   (OR_basic - OR_reduced) / (OR_basic - 1) * 100 %>%
     return()
 }
-
+perm_result <- PERM(OR_basic, OR_reduced)
 
 ####mediation####
 # Specify the model with the name(s) of the M and covariates
